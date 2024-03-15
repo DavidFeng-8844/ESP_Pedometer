@@ -3,7 +3,8 @@
  My project employs an innovative approach by harnessing the power of the ESP8266 microcontroller, an OLED screen, and the MPU6050 accelerometers. My method leverages data from all three axes, enabling an accurate step counts.
 
 **Key Components:**
-![[Weixin Image_20231213152746.jpg]]
+![image](https://github.com/DavidFeng-8844/ESP_Pedometer/assets/110443929/d71a0bc5-765f-4676-a9c7-ff942bf11e70)
+
 > 1. **ESP8266 Microcontroller:**
      The ESP8266 serves as the central processing unit, facilitating real-time data acquisition and analysis.
 >2. **OLED Screen:**
@@ -11,12 +12,9 @@
 >3. **MPU6050 accelerometers:**
    The MPU6050 accelerometers is a pivotal component, capturing precise acceleration data along all three axes (X, Y, and Z).
 ---
-## Video Display
-1. Uploading the program 
-![[2e72aeb498ed08b99e509b87e25566b0.mp4]]
-2. ![[97eb67c26b1e330511fbb99e907ea529.mp4]]
 ## How It Works
-![[Pasted image 20231213110915.png]]
+![image](https://github.com/DavidFeng-8844/ESP_Pedometer/assets/110443929/423bc788-499b-4ad9-b3f6-8bd5a04475ad)
+
 
 The MPU6050 IMU has both 3-Axis accelerometer and 3-Axis gyroscope integrated on a single chip.
 
@@ -35,7 +33,8 @@ The image below show the functionalities of the ESP8266's pins. For I2C communic
 #include "Wire.h
 ```
 
-![[Pasted image 20231213110943.png]]
+![image](https://github.com/DavidFeng-8844/ESP_Pedometer/assets/110443929/e1d818f0-cc7e-4073-b546-54f750583aba)
+
 
 
 
@@ -46,8 +45,9 @@ The image below show the functionalities of the ESP8266's pins. For I2C communic
 3. **Flash Memory:** The ESP8266 typically comes with built-in flash memory for storing program code and data. The amount of flash memory can vary among different ESP8266 modules.
     
 4. **Integration with Arduino:** The ESP8266 can be easily integrated with the Arduino platform, allowing users to leverage the Arduino IDE and its vast ecosystem of libraries and examples. Actually I am using the VScode plugin called platform IO to upload the code 
-	And I can use Serial Monitor to receive the data from the single board. 
-	![[Pasted image 20231213150139.png]]
+And I can use Serial Monitor to receive the data from the single board. 
+	![image](https://github.com/DavidFeng-8844/ESP_Pedometer/assets/110443929/c048a3c1-3ae8-4bef-b867-c5e51cc6dd3c)
+
 	
 
 
@@ -72,7 +72,7 @@ The image below show the functionalities of the ESP8266's pins. For I2C communic
 #include <Adafruit_SSD1306.h>
 ```
 All these libraries can be downloaded from Github, Arduino official website  or Platform IO library
-![[Pasted image 20231213150421.png]]
+![image](https://github.com/DavidFeng-8844/ESP_Pedometer/assets/110443929/38d9a567-5a87-47a7-b544-fd2e6ef2c147)
 
 
 
@@ -495,18 +495,22 @@ void loop() {
 **[Display and Feedback]**
 
 - Finally, I provide visual feedback on the OLED screen and the Serial Monitor, making it easy to track the step count in real-time.
-- ![[Weixin Image_20231213143832.jpg]]
+![image](https://github.com/DavidFeng-8844/ESP_Pedometer/assets/110443929/f66f7ec6-5bcc-47e2-83c9-4439899a7563)
+
 
 [Data Analysis]
  1. The image below is the data from the Serial Monitor when the accelerometers remain still, the test sample is the real time data output of the aaccelerometer. 
  2.  The average max & min is the data of current peak value calculate from the ==filtered data==. 
  3. The bufffer max & min is the peak value calculated from the ==Dyanamic Threshold==
-![[Pasted image 20231213144230.png]]
+![image](https://github.com/DavidFeng-8844/ESP_Pedometer/assets/110443929/e9059de1-922e-4225-abe5-c9c2abba9f6c)
+
 2. When the difference between the maximum and the minimum are greater than the sensitivity, the threshold is updated and printed on the Serial buffer for testing 
 
- ![[Pasted image 20231213151333.png]]
+![image](https://github.com/DavidFeng-8844/ESP_Pedometer/assets/110443929/f9e1f04e-da86-4201-ae48-78ea86914059)
+
 3. If 8 consecutive steps are occurred, the step would be updated 
-![[Pasted image 20231213151501.png]]
+![Uploading image.png…]()
+
 **[Conclusion]**
 
 - And there you have it! An Arduino-based step-counting algorithm using the MPU6050 sensor. This project is a fantastic example of combining hardware and software to create a practical application.
